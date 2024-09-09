@@ -319,7 +319,7 @@ class PluginPdfAppliance extends PluginPdfCommon {
 
       $opts = [];
       for ($i=1 ; $i<=$number_champs ; $i++) {
-         if ($data_opt = $result_app_opt->next()) {
+         if ($data_opt = $result_app_opt->current()) {
             $query_val = $DB->request(['SELECT' => 'vvalue',
                   'FROM'   => 'glpi_plugin_appliances_optvalues_items',
                   'WHERE'  => ['plugin_appliances_optvalues_id' => $data_opt["id"],
